@@ -1,30 +1,47 @@
-public class GameCharacter {
+public abstract class GameCharacter {
+    private String name;
     private int maxHealth;
     private int health;
     private int baseAttack;
     private int baseDefence;
 
-    public GameCharacter(int maxHealth, int health, int baseAttack, int baseDefence){
-        this.maxHealth = maxHealth;
-        this.health = health;
-        this.baseAttack = baseAttack;
-        this.baseDefence = baseDefence;
+    public GameCharacter(){
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getMaxHealth() {
         return maxHealth;
     }
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+        this.health = maxHealth;
+    }
 
     public int getHealth() {
         return health;
+    }
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     public int getBaseAttack() {
         return baseAttack;
     }
+    public void setBaseAttack(int baseAttack) {
+        this.baseAttack = baseAttack;
+    }
 
     public int getBaseDefence() {
         return baseDefence;
+    }
+    public void setBaseDefence(int baseDefence) {
+        this.baseDefence = baseDefence;
     }
 
     // lägga till liv till vår GameCharacter
@@ -64,4 +81,5 @@ public class GameCharacter {
     public int attackCalculation(int weaponAttack){
         return baseAttack + weaponAttack;
     }
+
 }
