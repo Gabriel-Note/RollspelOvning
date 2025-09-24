@@ -4,9 +4,11 @@ public abstract class GameCharacter {
     private int health;
     private int baseAttack;
     private int baseDefence;
+    private Weapon weaponSlot1;
 
-    public GameCharacter(){
-    }
+
+
+    public GameCharacter(){}
 
     public String getName() {
         return name;
@@ -58,7 +60,8 @@ public abstract class GameCharacter {
     // Ta bort liv från vår GameCharacter
     public void removeHealth(int healthPoints){
         if (health - healthPoints <= 0){
-            System.out.println(" reached 0 or less health and died");
+            health = 0;
+            System.out.println("reached 0 or less health and died");
         }
         else {
             health -= healthPoints;
@@ -78,8 +81,15 @@ public abstract class GameCharacter {
         return damage;
     }
     // attack without defence in mind
-    public int attackCalculation(int weaponAttack){
-        return baseAttack + weaponAttack;
+    public int attackCalculation(Weapon weapon){
+        return baseAttack + weapon.getBaseDamageValue();
     }
 
+    public void setWeaponSlot1(Weapon weapon){
+        this.weaponSlot1 = weapon;
+    }
+
+    public Weapon getWeaponSlot1() {
+        return weaponSlot1;
+    }
 }

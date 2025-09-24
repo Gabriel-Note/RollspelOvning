@@ -1,10 +1,9 @@
 public class Orc extends GameCharacter{
-    private final String NAME = "Orc";
-
-
-    public Orc(int maxHealth, int health, int baseAttack, int baseDefence){
-        super();
+    public Orc() {
+        this.setName("Orc");
+        this.setMaxHealth(50);
+        this.setBaseAttack(10);
+        this.setBaseDefence(0);
+        this.setWeaponSlot1(new Club("Club"));
     }
-
-
 }
