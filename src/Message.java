@@ -12,23 +12,13 @@ public class Message {
     }
 
     static void printCombatChoices(Player player){
-        if (player.getPlayerClass().equals("Mage")){
-            System.out.println(
-                    "\u001B[34mmm\u001B[0m" +
+        System.out.println(
                     "\n1. Attack" +
-                    "\n2. Spells" +
+                    "\n2. Ability" +
                     "\n3. Items" +
-                    "\n4. Flee"
+                    "\n4. Hero information" +
+                    "\n5. Flee"
             );
-        }
-        else {
-            System.out.println(
-                    "\n1. Attack" +
-                    "\n\u001B[31m2. Spells\u001B[0m" +
-                    "\n3. Items" +
-                    "\n4. Flee"
-            );
-        }
     }
 
     static void printAreYouSure(){
@@ -42,5 +32,26 @@ public class Message {
     static void printInvalidInput (){
         System.out.println("\u001B[31m Ogiltigt val\u001B[0m");
         System.out.println("");
+    }
+
+    static void printInventory(Player player){
+        int count = 1;
+        for (Item item : player.getInventory()){
+            if (item == null){
+                continue;
+            }
+            if (item.getNumberOfUses() == -1){
+                System.out.println("\n" + count + ". " + item.getName());
+            }else {
+                System.out.println(
+                        "\n" + count + ". " + item.getName() + ", " + item.getNumberOfUses() + " uses left"
+                );
+            }
+            count++;
+        }
+    }
+
+    static void printInventoryFull(){
+        System.out.println("Your inventory is full");
     }
 }

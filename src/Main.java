@@ -1,7 +1,9 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
-
+        /*
         System.out.println("\u001B[30mmm\u001B[0m");
         System.out.println("\u001B[31mmm\u001B[0m");
         System.out.println("\u001B[32mmm\u001B[0m");
@@ -10,20 +12,25 @@ public class Main {
         System.out.println("\u001B[35mmm\u001B[0m");
         System.out.println("\u001B[36mmm\u001B[0m");
         System.out.println("\u001B[37mmm\u001B[0m");
-        System.out.println("\u001B[38mmm\u001B[0m");
+        System.out.println("\u001B[38mmm\u001B[0m");*/
 
+        HealthPotion hpPot = new HealthPotion(Size.SMALL);
         System.out.println("Welcome to GAME NAME");
         Player player1 = new Player();
-        player1.getPlayerInfo();
         System.out.println("\nIt's time for your first opponent, an orc");
         EnemyWithType orc1 = new EnemyWithType(EnemyWithType.EnemyType.ORC);
         Orc orc2 = new Orc();
+        OrcBoss boss = new OrcBoss();
+
+        player1.setInventory(new HealthPotion(Size.SMALL),1);
+        player1.addToInventory(new HealthPotion(Size.LARGE),1);
         FightScene fight1 = new FightScene(player1, orc2);
+        FightScene fight2 = new FightScene(player1, boss);
 
 
 
 
-            System.out.println("\nWhat will you do?");
+        System.out.println("\nWhat will you do?");
         boolean loopCheck = true;
         while (loopCheck){
             System.out.println(

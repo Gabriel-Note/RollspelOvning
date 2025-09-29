@@ -7,11 +7,14 @@ public abstract class GameCharacter {
     private Weapon weaponSlot1;
     private Armor armorSlot1;
     private int attackPower;
+    private Item[] inventory;
 //    private int defencePower = baseDefence + armorSlot1.;
 
 
 
-    public GameCharacter(){}
+    public GameCharacter(){
+        this.inventory = new Item[6];
+    }
 
     public String getName() {
         return name;
@@ -65,30 +68,18 @@ public abstract class GameCharacter {
     public void removeHealth(int healthPoints){
         if (health - healthPoints <= 0){
             health = 0;
-            System.out.println("reached 0 or less health and died");
+            //System.out.println("reached 0 or less health and died");
         }
         else {
             health -= healthPoints;
         }
     }
-    // ändra maxlivet
+    // Ändra maxlivet
     public void setNewMaxHealth(int newMaxHealth){
         maxHealth = newMaxHealth;
     }
 
-    // attacks with defence in mind
-    public int attackCalculationWithDefence(int weaponAttack, int defenceValue){
-        int damage = baseAttack + weaponAttack - defenceValue;
-        if (damage < 0){
-            damage = 0;
-        }
-        return damage;
-    }
     // attack without defence in mind
-    public int attackCalculation(){
-        return attackPower;
-    }
-
     public void attack(GameCharacter victim){
         victim.removeHealth(this.attackPower);
     }
@@ -120,7 +111,44 @@ public abstract class GameCharacter {
     }
 
     public void isCritical(){
-
     }
 
+    public Item[] getInventory() {
+        return inventory;
+    }
+
+    public  void setInventory(Item item, int location){
+        if (location <= this.inventory.length && location >= 1){
+            this.inventory[location - 1] = item;
+        }
+        else {
+            System.out.println("Can't assign, out of bounds");
+        }
+    }
+
+    public void addToInventory(Item item, int location) {
+        if (location <= this.inventory.length && location >= 1){
+            int count = 0;
+            for (Item itemInInventory : this.inventory){
+                if (itemInInventory == null){
+                    this.inventory[count] = item;
+                    System.out.println(item.getName() + " added in slot " + (count + 1));
+                }else {
+                    System.out.println(
+                            "Your inventory is full" +
+                            this.inventory[location - 1].getName() +
+                            " will be discarded"
+                    );
+                    Message.printAreYouSure();
+                    if (SelectionHandling.positiveInt() == 1){
+                        this.inventory[location - 1] = item;
+                    }
+                }
+
+            }
+        }
+        else {
+            System.out.println("Can't assign, out of bounds");
+        }
+    }
 }

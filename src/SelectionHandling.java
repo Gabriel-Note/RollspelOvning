@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class SelectionHandling {
 
-    // Validering användarinput som ett positivt heltal
+    // Validering av användarinput som ett positivt heltal
     static int positiveInt(){
         Scanner scan = new Scanner(System.in);
         while (true) {

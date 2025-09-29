@@ -3,8 +3,7 @@ public class Item {
     private double sellValue;
     private String name;
 
-    public Item(String name){
-        setName(name);
+    public Item(){
     }
 
     public double getWeight() {
@@ -29,5 +28,8 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public int getNumberOfUses(){
+        return -1;
     }
 }
