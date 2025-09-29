@@ -1,43 +1,9 @@
 public class Enemy extends GameCharacter{
-    public enum EnemyType {
-        ORC, ORCBOSS
-    }
     private String description;
-
-    public Enemy(EnemyType enemyType) {
-        createEnemy(enemyType);
-    }
+    private int specialAttack;
+    private String specialAttackShout;
 
     public Enemy() {
-    }
-
-    public void createEnemy(EnemyType enemyType){
-        switch (enemyType){
-            case ORC:
-                orc();
-                System.out.println("orc metod kallad");
-                break;
-            case ORCBOSS:
-                orcBoss();
-                System.out.println("orcBoss metod kallad");
-                break;
-        }
-    }
-
-    public void orc(){
-        description = "En grön varelse som är väldigt aggressiv";
-        this.setName("Orc");
-        this.setMaxHealth(50);
-        this.setBaseAttack(10);
-        this.setBaseDefence(0);
-        this.setWeaponSlot1(new Club("Club"));
-    }
-    public void orcBoss(){
-        description = "En grön jätte som är ledaren över orcerna";
-        this.setMaxHealth(200);
-        this.setBaseAttack(20);
-        this.setBaseDefence(0);
-        this.setWeaponSlot1(new GreatClub("Smasher"));
 
     }
 
@@ -45,12 +11,24 @@ public class Enemy extends GameCharacter{
         return description;
     }
 
-    public void getEnemyInfo(){
-        System.out.println(
-                "\nNamn: " + getName() +
-                "\nMaxliv: " + getMaxHealth() +
-                "\nStartvapen: " + getWeaponSlot1().getName()
-        );
+    public void setDescription(String description) {
+        this.description = description;
     }
 
+    public int getSpecialAttack() {
+        return specialAttack;
+    }
+
+    public void setSpecialAttack(int specialAttack, String specialAttackShout) {
+        this.specialAttack = specialAttack;
+        this.specialAttackShout = specialAttackShout;
+    }
+
+    public String getSpecialAttackShout() {
+        return specialAttackShout;
+    }
+
+    public void setSpecialAttackShout(String specialAttackShout) {
+        this.specialAttackShout = specialAttackShout;
+    }
 }

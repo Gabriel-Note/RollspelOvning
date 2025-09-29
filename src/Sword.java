@@ -1,7 +1,7 @@
-public class Sword extends Weapon{
+public class Sword extends Weapon {
     public Sword(String name) {
         super(name);
-        this.setBaseCriticalHitChance(1.15);
-        this.setBaseDamageValue(10);
+        this.setBaseCriticalHitChance(15);
+        this.setBaseWeaponAttack(10);
     }
 }

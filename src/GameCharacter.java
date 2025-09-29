@@ -5,6 +5,9 @@ public abstract class GameCharacter {
     private int baseAttack;
     private int baseDefence;
     private Weapon weaponSlot1;
+    private Armor armorSlot1;
+    private int attackPower;
+//    private int defencePower = baseDefence + armorSlot1.;
 
 
 
@@ -57,6 +60,7 @@ public abstract class GameCharacter {
             System.out.println("added " + healthPoints + " hp to health");
         }
     }
+
     // Ta bort liv från vår GameCharacter
     public void removeHealth(int healthPoints){
         if (health - healthPoints <= 0){
@@ -81,15 +85,42 @@ public abstract class GameCharacter {
         return damage;
     }
     // attack without defence in mind
-    public int attackCalculation(Weapon weapon){
-        return baseAttack + weapon.getBaseDamageValue();
+    public int attackCalculation(){
+        return attackPower;
+    }
+
+    public void attack(GameCharacter victim){
+        victim.removeHealth(this.attackPower);
+    }
+
+    //Attakerar med vapenförmågan
+    public void attack(GameCharacter victim, Weapon weapon){
+        victim.removeHealth(weapon.useAbility());
     }
 
     public void setWeaponSlot1(Weapon weapon){
         this.weaponSlot1 = weapon;
+        this.attackPower = baseAttack + weapon.getBaseWeaponAttack();
     }
 
     public Weapon getWeaponSlot1() {
         return weaponSlot1;
     }
+
+    public Armor getArmorSlot1() {
+        return armorSlot1;
+    }
+
+    public void setArmorSlot1(Armor armorSlot1) {
+        this.armorSlot1 = armorSlot1;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public void isCritical(){
+
+    }
+
 }

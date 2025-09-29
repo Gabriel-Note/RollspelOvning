@@ -1,17 +1,18 @@
-public class Weapon extends Item{
-    private int baseDamageValue;
+public abstract class Weapon extends Item{
+    private int baseWeaponAttack;
     private double baseCriticalHitChance;
+    private int abilityPower;
 
     public Weapon(String name) {
         super(name);
     }
 
-    public int getBaseDamageValue() {
-        return baseDamageValue;
+    public int getBaseWeaponAttack() {
+        return baseWeaponAttack;
     }
 
-    public void setBaseDamageValue(int baseDamageValue) {
-        this.baseDamageValue = baseDamageValue;
+    public void setBaseWeaponAttack(int baseWeaponAttack) {
+        this.baseWeaponAttack = baseWeaponAttack;
     }
 
     public double getBaseCriticalHitChance() {
@@ -20,5 +21,9 @@ public class Weapon extends Item{
 
     public void setBaseCriticalHitChance(double baseCriticalHitChance) {
         this.baseCriticalHitChance = baseCriticalHitChance;
+    }
+
+    public int useAbility(){
+        return -1;
     }
 }

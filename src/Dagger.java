@@ -1,7 +1,7 @@
 public class Dagger extends Weapon{
     public Dagger(String name) {
         super(name);
-        this.setBaseCriticalHitChance(1.5);
-        this.setBaseDamageValue(4);
+        this.setBaseCriticalHitChance(50);
+        this.setBaseWeaponAttack(4);
     }
 }
