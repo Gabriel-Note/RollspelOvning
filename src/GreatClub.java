@@ -3,5 +3,6 @@ public class GreatClub extends Weapon{
         super(name);
         this.setBaseCriticalHitChance(0);
         this.setBaseWeaponAttack(12);
+        this.setWeaponType("GreatClub");
     }
 }

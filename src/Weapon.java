@@ -1,7 +1,9 @@
 public abstract class Weapon extends Item{
     private int baseWeaponAttack;
     private double baseCriticalHitChance;
-    public String abilityName;
+    protected String abilityName;
+    protected String weaponType;
+
 
     public Weapon(String name) {
         super();
@@ -29,5 +31,13 @@ public abstract class Weapon extends Item{
     }
     public String getAbilityName() {
         return abilityName;
+    }
+
+    public String getWeaponType() {
+        return weaponType;
+    }
+
+    public void setWeaponType(String weaponType) {
+        this.weaponType = weaponType;
     }
 }

@@ -1,9 +1,9 @@
 public class HealthPotion extends Consumable{
     public HealthPotion(Size size) {
         super();
-        System.out.println(size.getDescription());
+        //System.out.println(size.getDescription());
         this.setName(size.getDescription() + " Health potion");
-        System.out.println(this.getName());
+        //System.out.println(this.getName());
         switch (size.getStrength()){
             case 1:
                 this.effectValue = 10;

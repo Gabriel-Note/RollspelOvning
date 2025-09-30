@@ -10,13 +10,13 @@ public class Consumable extends Item{
     public int getNumberOfUses() {
         return numberOfUses;
     }
-
+    @Override
+    public void addNumberOfUses(){
+        this.numberOfUses++;
+    }
+    @Override
     public void setNumberOfUses(int numberOfUses) {
         this.numberOfUses = numberOfUses;
-    }
-
-    public void addNumberOfUses(int numberOfUses) {
-        this.numberOfUses += numberOfUses;
     }
 
 }

@@ -22,8 +22,19 @@ public class Main {
         Orc orc2 = new Orc();
         OrcBoss boss = new OrcBoss();
 
-        player1.setInventory(new HealthPotion(Size.SMALL),1);
-        player1.addToInventory(new HealthPotion(Size.LARGE),1);
+        player1.addToInventory(new HealthPotion(Size.SMALL));
+        player1.addToInventory(new HealthPotion(Size.LARGE));
+        player1.addToInventory(new HealthPotion(Size.SMALL));
+        player1.addToInventory(new HealthPotion(Size.SMALL));
+        player1.addToInventory(new HealthPotion(Size.LARGE));
+        player1.addToInventory(new Sword("Bee Stinger"));
+        player1.addToInventory(new HealthPotion(Size.LARGE));
+        player1.addToInventory(new HealthPotion(Size.LARGE));
+        player1.addToInventory(new HealthPotion(Size.LARGE));
+        player1.addToInventory(new Sword("butter"));
+        player1.addToInventory(new Club("Wrecker"));
+        player1.addToInventory(new Sword("Butchers knife"));
+        player1.addToInventory(new Staff("Firebolt staff"));
         FightScene fight1 = new FightScene(player1, orc2);
         FightScene fight2 = new FightScene(player1, boss);
 

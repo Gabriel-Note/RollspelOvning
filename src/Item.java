@@ -32,4 +32,8 @@ public class Item {
     public int getNumberOfUses(){
         return -1;
     }
+    public void addNumberOfUses(){
+    }
+    public void setNumberOfUses(int numberOfUses) {
+    }
 }

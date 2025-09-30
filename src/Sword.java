@@ -3,5 +3,6 @@ public class Sword extends Weapon {
         super(name);
         this.setBaseCriticalHitChance(15);
         this.setBaseWeaponAttack(10);
+        this.setWeaponType("Sword");
     }
 }

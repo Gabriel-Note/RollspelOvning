@@ -34,22 +34,7 @@ public class Message {
         System.out.println("");
     }
 
-    static void printInventory(Player player){
-        int count = 1;
-        for (Item item : player.getInventory()){
-            if (item == null){
-                continue;
-            }
-            if (item.getNumberOfUses() == -1){
-                System.out.println("\n" + count + ". " + item.getName());
-            }else {
-                System.out.println(
-                        "\n" + count + ". " + item.getName() + ", " + item.getNumberOfUses() + " uses left"
-                );
-            }
-            count++;
-        }
-    }
+
 
     static void printInventoryFull(){
         System.out.println("Your inventory is full");

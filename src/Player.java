@@ -20,7 +20,7 @@ public class Player extends GameCharacter {
         return playerClass;
     }
     // requires selectionhandling to re-choose chosenClass argument
-    public void setClassAndAttributes(){
+    private void setClassAndAttributes(){
         Message.printClassSelection();
         while (true){
             int chosenClass = SelectionHandling.positiveInt();

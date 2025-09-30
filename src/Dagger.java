@@ -3,5 +3,6 @@ public class Dagger extends Weapon{
         super(name);
         this.setBaseCriticalHitChance(50);
         this.setBaseWeaponAttack(4);
+        this.setWeaponType("Dagger");
     }
 }

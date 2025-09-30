@@ -4,6 +4,7 @@ public class Staff extends Weapon{
         this.setBaseCriticalHitChance(0);
         this.setBaseWeaponAttack(2);
         setAbilityName();
+        this.setWeaponType("Staff");
     }
 
     @Override

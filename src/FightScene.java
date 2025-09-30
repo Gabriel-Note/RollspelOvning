@@ -23,7 +23,7 @@ public class FightScene extends Scenario{
                     break;
                 case 3:
                     System.out.println("shows items that can be used (not implemented)");
-                    Message.printInventory(player);
+                    player.printInventory();
                     continue;
                 case 4:
                     player.getPlayerInfo();
