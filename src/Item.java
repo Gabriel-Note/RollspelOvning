@@ -32,8 +32,10 @@ public class Item {
     public int getNumberOfUses(){
         return -1;
     }
-    public void addNumberOfUses(){
-    }
+    public void addNumberOfUses(){}
+    public void removeNumberOfUses(){}
+
     public void setNumberOfUses(int numberOfUses) {
     }
+    public void useItem(GameCharacter player){}
 }

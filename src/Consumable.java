@@ -18,5 +18,9 @@ public class Consumable extends Item{
     public void setNumberOfUses(int numberOfUses) {
         this.numberOfUses = numberOfUses;
     }
+    @Override
+    public void removeNumberOfUses(){
+        this.numberOfUses--;
+    }
 
 }

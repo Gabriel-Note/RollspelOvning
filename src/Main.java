@@ -33,8 +33,8 @@ public class Main {
         player1.addToInventory(new HealthPotion(Size.LARGE));
         player1.addToInventory(new Sword("butter"));
         player1.addToInventory(new Club("Wrecker"));
-        player1.addToInventory(new Sword("Butchers knife"));
         player1.addToInventory(new Staff("Firebolt staff"));
+        player1.addToInventory(new Sword("Butchers knife"));
         FightScene fight1 = new FightScene(player1, orc2);
         FightScene fight2 = new FightScene(player1, boss);
 

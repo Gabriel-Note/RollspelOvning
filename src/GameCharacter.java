@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class GameCharacter {
     private String name;
     private int maxHealth;
@@ -84,7 +86,7 @@ public abstract class GameCharacter {
     public void addHealth(int healthPoints){
         if (health + healthPoints > maxHealth){
             health = maxHealth;
-            System.out.println("set to max health");
+            System.out.println("fully healed");
         }
         else {
             health += healthPoints;
@@ -172,7 +174,7 @@ public abstract class GameCharacter {
                 else if (selection >=1 && selection <= this.inventory.length) {
                     this.inventory[selection - 1] = item;
                     this.inventory[selection - 1].addNumberOfUses();
-                    System.out.println("Added to slot " + selection);
+                    System.out.println(item.getName() + " added to slot " + selection);
                     loopCheck = false;
                 }
                 else {
@@ -191,16 +193,38 @@ public abstract class GameCharacter {
                 continue;
             }
             if (item instanceof Weapon){
-
-            }
-            if (item.getNumberOfUses() == -1){
-                System.out.println(count + ". " + item.getName());
-            }else {
                 System.out.println(
-                        count + ". " + item.getName() + ", " + item.getNumberOfUses() + " uses left"
+                    count + ". " + item.getName() +
+                    " (" + ((Weapon) item).getWeaponType() + ")"
+                );
+            }
+            else {
+                System.out.println(
+                    count + ". " + item.getName() + ", " + item.getNumberOfUses() + " uses left"
                 );
             }
             count++;
         }
+    }
+    public ArrayList<Item> printInventoryConsumable(){
+        System.out.println("");
+        int count = 0;
+        ArrayList<Item> consumableItems = new ArrayList<>();
+        for (Item item : this.inventory){
+            if (item == null){
+                continue;
+            }
+            if (!(item instanceof Consumable)){
+                continue;
+            }
+            else {
+                consumableItems.add(item);
+                System.out.println(
+                        (count + 1) + ". " + item.getName() + ", " + item.getNumberOfUses() + " uses left"
+                );
+            }
+            count++;
+        }
+        return consumableItems;
     }
 }

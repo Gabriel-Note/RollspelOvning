@@ -59,7 +59,8 @@ public class Player extends GameCharacter {
                 "\nKlass: " + getPlayerClass() +
                 "\nLiv: " + getHealth() +
                 "\nMaxliv: " + getMaxHealth() +
-                "\nVapen: " + getWeaponSlot1().getName()
+                "\nVapen: " + getWeaponSlot1().getName() +
+                        " (" + getWeaponSlot1().getWeaponType() + ")"
         );
     }
 }

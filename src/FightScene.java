@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class FightScene extends Scenario{
 
     public FightScene(Player player, GameCharacter enemy) {
@@ -22,8 +24,19 @@ public class FightScene extends Scenario{
                     }
                     break;
                 case 3:
-                    System.out.println("shows items that can be used (not implemented)");
-                    player.printInventory();
+//                    System.out.println("shows items that can be used (not implemented)");
+                    System.out.println("\nSelect item to use");
+                    ArrayList<Item> consumableItems = player.printInventoryConsumable();
+                    System.out.println("0. Cancel");
+                    selection = SelectionHandling.positiveInt();
+                    System.out.println("array size: " + consumableItems.size());
+                    if (selection > 0 && selection <= consumableItems.size()){
+                        consumableItems.get(selection - 1).useItem(player);
+                    } else if (selection == 0) {
+                        continue;
+                    } else {
+                        Message.printInvalidInput();
+                    }
                     continue;
                 case 4:
                     player.getPlayerInfo();

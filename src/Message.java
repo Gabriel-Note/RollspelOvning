@@ -30,7 +30,7 @@ public class Message {
     }
 
     static void printInvalidInput (){
-        System.out.println("\u001B[31m Ogiltigt val\u001B[0m");
+        System.out.println("\u001B[31mInvalid input\u001B[0m");
         System.out.println("");
     }
 

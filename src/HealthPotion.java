@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class HealthPotion extends Consumable{
     public HealthPotion(Size size) {
         super();
@@ -18,6 +20,17 @@ public class HealthPotion extends Consumable{
                 this.effectValue = 70;
                 break;
         }
+    }
+    @Override
+    public void useItem(GameCharacter player){
+        if (this.getNumberOfUses() <= 0){
+            System.out.println("No uses left");
+        }
+        else {
+            player.addHealth(effectValue);
+            removeNumberOfUses();
+        }
+
     }
 
 }
